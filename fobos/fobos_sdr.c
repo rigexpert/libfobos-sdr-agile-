@@ -1149,7 +1149,7 @@ static void LIBUSB_CALL _libusb_callback(struct libusb_transfer *transfer)
         {
             dev->transfer_errors++;
         }
-        if (dev->transfer_errors >= (int)dev->transfer_buf_count || LIBUSB_TRANSFER_NO_DEVICE == transfer->status)
+        if (dev->transfer_errors >= (int)dev->transfers_count || LIBUSB_TRANSFER_NO_DEVICE == transfer->status)
         {
             dev->dev_lost = 1;
             fobos_sdr_cancel_async(dev);
